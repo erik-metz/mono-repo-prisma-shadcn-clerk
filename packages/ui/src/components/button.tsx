@@ -2,6 +2,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 
+import { Spinner } from '@workspace/ui/components/spinner'
 import { cn } from '@workspace/ui/lib/utils'
 
 const buttonVariants = cva(
@@ -40,24 +41,57 @@ const buttonVariants = cva(
   }
 )
 
+const spinnerColors: Record<string, string> = {
+  default: '#FFFFFF',
+  destructive: '#111111',
+  outline: '#111111',
+  secondary: '#111111',
+  ghost: '#111111',
+  link: '#111111',
+  fallback: '#111111',
+}
+
 function Button({
   className,
-  variant,
+  variant = 'default',
   size,
   asChild = false,
+  disabled,
+  isPending,
+  children,
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
+    isPending?: boolean
   }) {
   const Comp = asChild ? Slot : 'button'
+
+  const spinnerColor =
+    disabled || isPending
+      ? spinnerColors.fallback
+      : (spinnerColors[variant ?? 'fallback'] ?? spinnerColors.fallback)
 
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({
+          variant: disabled ? 'default' : variant,
+          size,
+          cursor: isPending ? 'wait' : disabled ? 'notAllowed' : 'default',
+          className,
+        })
+      )}
+      disabled={disabled || isPending}
       {...props}
-    />
+    >
+      {isPending ? (
+        <Spinner height={16} width={2} color={spinnerColor} />
+      ) : (
+        children
+      )}
+    </Comp>
   )
 }
 
