@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  transpilePackages: ['@repo/database'],
+/**
+ * @type {import('next').NextConfig}
+ */
+module.exports = {
+  reactStrictMode: true,
 }
-
-module.exports = nextConfig
