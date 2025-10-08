@@ -1,14 +1,5 @@
 {
   "$schema": "https://turborepo.com/schema.json",
-  "pipeline": {
-    "generate": {
-      "cache": false
-    },
-    "build": {
-      "dependsOn": ["^build", "generate"],
-      "outputs": [".next/**", "dist/**"]
-    }
-  },
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
