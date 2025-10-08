@@ -5,17 +5,21 @@ import { Button } from '@repo/ui/components/button'
 import { tryCatch } from '@repo/utils/tryCatch'
 
 const getUsers = async () => {
+  console.log('in getUsers')
   const { data: users, error } = await tryCatch(prisma.user.findMany())
   if (error) {
     console.error('Error getting users', error.message)
     return []
   }
+  console.log('in getUsers', { users })
 
   return users
 }
 
 export default async function IndexPage() {
   const users = await getUsers()
+  console.log('in IndexPage', { users })
+
   return (
     <div className="flex flex-col gap-2">
       <h1 className="text-3xl font-semibold">Hello Admin</h1>
