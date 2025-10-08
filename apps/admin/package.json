@@ -2,6 +2,9 @@
   "private": true,
   "name": "admin",
   "version": "1.0.0",
+  "prisma": {
+    "schema": "../../packages/database/prisma/schema.prisma"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
