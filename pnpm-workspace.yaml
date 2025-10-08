@@ -3,8 +3,10 @@ packages:
   - packages/*
 
 onlyBuiltDependencies:
-  - "@prisma/client"
-  - "@prisma/engines"
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@tailwindcss/oxide'
+  - core-js-pure
   - esbuild
   - prisma
   - unrs-resolver
