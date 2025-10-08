@@ -5961,20 +5961,12 @@ var require_client = __commonJS({
   }
 });
 
-// generated/client/client.js
-var require_client2 = __commonJS({
-  "generated/client/client.js"(exports2, module2) {
-    "use strict";
-    module2.exports = { ...require_client() };
-  }
-});
-
 // src/client.ts
 var client_exports = {};
 __export(client_exports, {
   prisma: () => prisma
 });
-var import_client = __toESM(require_client2());
+var import_client = __toESM(require_client());
 __reExport(client_exports, __toESM(require_client()));
 var globalForPrisma = global;
 var prisma = globalForPrisma.prisma || new import_client.PrismaClient();
