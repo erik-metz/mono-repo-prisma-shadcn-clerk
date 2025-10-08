@@ -5,12 +5,7 @@
       "dependsOn": ["^build"],
       "env": ["DATABASE_URL"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [
-        "dist/**",
-        ".next/**",
-        "!.next/cache/**",
-        "node_modules/@prisma/client/**"
-      ]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "db:migrate:dev": {
       "cache": false,
