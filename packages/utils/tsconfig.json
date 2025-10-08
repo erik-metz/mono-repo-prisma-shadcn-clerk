@@ -1,12 +1,11 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
-    "lib": ["es2015"],
     "baseUrl": ".",
     "paths": {
-      "@repo/database/*": ["./src/*"]
+      "@repo/utils/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tsup.config.ts"],
+  "include": ["."],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,17 @@
+{
+  "name": "@repo/utils",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./logger": "./src/logger.ts",
+    "./tryCatch": "./src/tryCatch.ts",
+    "./validateFormData": "./src/validateFormData.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.9",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.9.2"
+  }
+}

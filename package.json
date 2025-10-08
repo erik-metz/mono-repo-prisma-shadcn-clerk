@@ -1,5 +1,5 @@
 {
-  "name": "with-prisma",
+  "name": "mono-repo-prisma.shadcn-clerk",
   "private": true,
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma",
@@ -17,7 +17,8 @@
     "lint": "turbo run lint"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@prisma/client": "latest",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

@@ -23,7 +23,6 @@ This turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 - [Prisma ORM](https://prisma.io/) for accessing the database
-- [Docker Compose](https://docs.docker.com/compose/) for a local MySQL database
 
 ## Getting started
 
@@ -45,21 +44,9 @@ Navigate to your project directory:
 cd ./my-turborepo
 ```
 
-### 2. Setup a local database with Docker Compose
-
-We use [Prisma ORM](https://prisma.io/) to manage and access our database. As such you will need a database for this project, either locally or hosted in the cloud.
-
-To make this process easier, a [`docker-compose.yml` file](./docker-compose.yml) is included to setup a MySQL server locally with a new database named `turborepo`:
-
-Start the MySQL database using Docker Compose:
-
-```sh
-docker-compose up -d
-```
-
 To change the default database name, update the `MYSQL_DATABASE` environment variable in the [`docker-compose.yml` file](/docker-compose.yml).
 
-### 3. Setup environment variables
+### 2. Setup environment variables
 
 Once the database is ready, copy the `.env.example` file to the [`/packages/database`](./packages/database/) and [`/apps/web`](./apps/web/) directories as `.env`:
 
@@ -72,7 +59,7 @@ This ensures Prisma has access to the `DATABASE_URL` environment variable, which
 
 If you added a custom database name, or use a cloud based database, you will need to update the `DATABASE_URL` in your `.env` accordingly.
 
-### 4. Migrate your database
+### 3. Migrate your database
 
 Once your database is running, you’ll need to create and apply migrations to set up the necessary tables. Run the database migration command:
 
@@ -104,7 +91,7 @@ You’ll be prompted to name the migration. Once you provide a name, Prisma will
 
 For production environments, always push schema changes to your database using the [`prisma migrate deploy` command](https://www.prisma.io/docs/orm/prisma-client/deployment/deploy-database-changes-with-prisma-migrate). You can find an example `db:migrate:deploy` script in the [`package.json` file](/packages/database/package.json) of the `database` package.
 
-### 5. Seed your database
+### 4. Seed your database
 
 To populate your database with initial or fake data, use [Prisma's seeding functionality](https://www.prisma.io/docs/guides/database/seed-database).
 
@@ -132,7 +119,7 @@ bun run db:seed
 
 </details>
 
-### 6. Build your application
+### 5. Build your application
 
 To build all apps and packages in the monorepo, run:
 
@@ -158,7 +145,7 @@ bun run build
 
 </details>
 
-### 7. Start the application
+### 6. Start the application
 
 Finally, start your application with:
 

@@ -11,6 +11,9 @@ importers:
       '@prisma/client':
         specifier: latest
         version: 6.17.0(prisma@6.17.0(typescript@5.9.3))(typescript@5.9.3)
+      zod:
+        specifier: ^3.25.76
+        version: 3.25.76
     devDependencies:
       prettier:
         specifier: ^3.2.5
@@ -58,6 +61,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@types/node':
         specifier: ^20.11.24
         version: 20.19.19
@@ -101,6 +107,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@types/node':
         specifier: ^20.11.24
         version: 20.19.19
@@ -155,6 +164,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
@@ -213,6 +225,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@tailwindcss/postcss':
         specifier: ^4.1.11
         version: 4.1.14
@@ -231,6 +246,21 @@ importers:
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.14
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.3
+
+  packages/utils:
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../config-eslint
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@types/node':
+        specifier: ^20.19.9
+        version: 20.19.19
       typescript:
         specifier: ^5.9.2
         version: 5.9.3
