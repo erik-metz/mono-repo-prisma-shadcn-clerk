@@ -2,9 +2,4 @@ packages:
   - apps/*
   - packages/*
 
-onlyBuiltDependencies:
-  - "@prisma/client"
-  - "@prisma/engines"
-  - esbuild
-  - prisma
-  - unrs-resolver
+onlyBuiltDependenciesFile: ./allow.json
